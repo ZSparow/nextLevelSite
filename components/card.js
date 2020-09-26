@@ -1,16 +1,22 @@
 import Link from "next/link";
-const Card = () => (
+const Card = (props) => (
   <>
+    {console.log(props)}
     <div className="card">
       <div className="card-header">
-        <img src="images/blog.PNG" alt="" />
+        <img src={props.props.image} alt="" />
       </div>
       <div className="card-main">
-        <h1>Theis is title header</h1>
-        <p>By Zeyad</p>
+        <h1>
+          {props.props.title.length > 20
+            ? props.props.title.substr(0, 20) + "..."
+            : props.props.title}
+        </h1>
+
+        <p>By {props.props.athor}</p>
       </div>
       <div className="card-footer flex-container">
-        <Link href="article">
+        <Link href={`articles/${props.props.id}`}>
           <a>Read more</a>
         </Link>
         <p>19 sept, 2020</p>

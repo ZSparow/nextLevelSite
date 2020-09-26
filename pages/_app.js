@@ -4,9 +4,9 @@ import Footer from "../components/footer";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Header></Header>
+      <Header />
       <Component {...pageProps} />
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
